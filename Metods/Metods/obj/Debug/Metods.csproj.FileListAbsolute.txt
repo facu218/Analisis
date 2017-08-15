@@ -1,0 +1,5 @@
+c:\users\facuc\documents\visual studio 2017\Projects\Metods\Metods\bin\Debug\Metods.dll
+c:\users\facuc\documents\visual studio 2017\Projects\Metods\Metods\bin\Debug\Metods.pdb
+c:\users\facuc\documents\visual studio 2017\Projects\Metods\Metods\obj\Debug\Metods.csprojResolveAssemblyReference.cache
+c:\users\facuc\documents\visual studio 2017\Projects\Metods\Metods\obj\Debug\Metods.dll
+c:\users\facuc\documents\visual studio 2017\Projects\Metods\Metods\obj\Debug\Metods.pdb
