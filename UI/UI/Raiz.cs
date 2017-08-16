@@ -6,22 +6,12 @@ using System.Threading.Tasks;
 
 namespace Metods
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var RaizPrueba = new ResultadoRaiz();
-            Console.WriteLine(RaizPrueba.Raiz(3, 8));
-            Console.ReadKey();
-        }
-    }
-
     public class ResultadoRaiz
     {        
-        public double Raiz (double xi, double xd)
+        public string Raiz (double xi, double xd)
         {
             var funcion = new Funcion();
-            Boolean flagSalida = false;
+            Boolean flagSalida = false, flgNoRaiz = false;
             double raizFinal =0;
             int c=0;
             double Tole = 0.0001;
@@ -42,9 +32,10 @@ namespace Metods
                         flagSalida = true;
                     }
                 }
-                else if (funcion.Function(xi) * funcion.Function(xd) > 0)
+                else if (funcion.Function(xi) * funcion.Function(xd) > 0) //Mayor a cero, ingresa nuevos valores.
                 {
-                    //VOlver a ingresar xi xd
+                    flgNoRaiz = true;
+                    flagSalida = true;
                 }
                 else //menor a cero
                 {
@@ -69,7 +60,10 @@ namespace Metods
                 }
 
             }
-            return raizFinal;
+            if (flgNoRaiz == true)
+            {
+                return "No se encuentra ninguna raiz entre esos dos valores. Ingrese nuevos.";
+            }else return "El resultado de la raiz entre la biseccion es "+ Convert.ToString(raizFinal);
         }
     }
 }

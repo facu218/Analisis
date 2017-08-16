@@ -1,0 +1,10 @@
+C:\Users\Usuario\Documents\SO-TP1\UI\UI\bin\Debug\UI.exe.config
+C:\Users\Usuario\Documents\SO-TP1\UI\UI\bin\Debug\UI.exe
+C:\Users\Usuario\Documents\SO-TP1\UI\UI\bin\Debug\UI.pdb
+C:\Users\Usuario\Documents\SO-TP1\UI\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\SO-TP1\UI\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\Usuario\Documents\SO-TP1\UI\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\Usuario\Documents\SO-TP1\UI\UI\obj\Debug\UI.exe
+C:\Users\Usuario\Documents\SO-TP1\UI\UI\obj\Debug\UI.pdb
+C:\Users\Usuario\Documents\SO-TP1\UI\UI\obj\Debug\UI.Principal.resources
+C:\Users\Usuario\Documents\SO-TP1\UI\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
