@@ -33,7 +33,7 @@ namespace UI
             double xi = Convert.ToDouble(txtValor1.Text);
             double xd = Convert.ToDouble(txtValor2.Text);
             pnlRaiz.Visible = false;
-            txtResultado.Text = a.Biseccion(xi, xd);
+            txtResultado.Text = a.Raiz(xi, xd);
         }
 
         private void picBox_Paint(object sender, PaintEventArgs e)
