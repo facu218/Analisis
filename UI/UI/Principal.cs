@@ -40,7 +40,7 @@ namespace UI
             {
                 double xi = Convert.ToDouble(txtValor1.Text);
                 double xd = Convert.ToDouble(txtValor2.Text);
-                txtResultado.Text = a.Raiz(xi, xd);
+                txtResultado.Text = a.Biseccion(xi, xd);
             }else if (flgTan == true)
             {
                 double xi = Convert.ToDouble(txtValor1.Text);
@@ -49,7 +49,7 @@ namespace UI
             {
                 double xi = Convert.ToDouble(txtValor1.Text);
                 double xd = Convert.ToDouble(txtValor2.Text);
-                txtResultado.Text = null;
+                txtResultado.Text = a.ReglaFalsa(xi,xd);
             }
             flgBis = false;
             flgTan = false;
