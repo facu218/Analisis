@@ -10,7 +10,7 @@ namespace Metods
     {
         public double Function (double x)
         {
-            return Math.Pow(x - 3, 2) - 1;
+            return Math.Pow(x-3 , 2)-1;
         }
     }
 }

@@ -21,19 +21,39 @@ namespace UI
         System.Drawing.Pen mylapiz1 = new System.Drawing.Pen(System.Drawing.Color.Black);
         System.Drawing.Pen mylapiz2 = new System.Drawing.Pen(System.Drawing.Color.Red);
 
-
+        Boolean flgBis, flgReg, flgTan = false;
         private void biseccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            flgBis = true;
+            lblPrincipal.Text = "Ingrese dos valores para biseccion";
+            txtValor2.Visible = true;
             pnlRaiz.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var a = new ResultadoRaiz();
-            double xi = Convert.ToDouble(txtValor1.Text);
-            double xd = Convert.ToDouble(txtValor2.Text);
+            //double xi = Convert.ToDouble(txtValor1.Text);
+            //double xd = Convert.ToDouble(txtValor2.Text);
             pnlRaiz.Visible = false;
-            txtResultado.Text = a.Raiz(xi, xd);
+            if (flgBis== true)
+            {
+                double xi = Convert.ToDouble(txtValor1.Text);
+                double xd = Convert.ToDouble(txtValor2.Text);
+                txtResultado.Text = a.Raiz(xi, xd);
+            }else if (flgTan == true)
+            {
+                double xi = Convert.ToDouble(txtValor1.Text);
+                txtResultado.Text = a.Tangente(xi);
+            }else if(flgReg == true)
+            {
+                double xi = Convert.ToDouble(txtValor1.Text);
+                double xd = Convert.ToDouble(txtValor2.Text);
+                txtResultado.Text = null;
+            }
+            flgBis = false;
+            flgTan = false;
+            flgReg = false;
         }
 
         private void picBox_Paint(object sender, PaintEventArgs e)
@@ -92,9 +112,26 @@ namespace UI
             Graficar();
         }
 
+        private void reglaFalsaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lblPrincipal.Text = "Ingrese 2 valores para regla falsa";
+            txtValor2.Visible = true;
+            pnlRaiz.Visible = true;
+            flgReg = true;
+        }
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             picBox.Image = null;
+        }
+
+        private void tangenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lblPrincipal.Text = "Ingrese un valor para la tangente...";
+            txtValor2.Visible = false;
+            pnlRaiz.Visible = true;
+            flgTan = true;
+            
         }
     }
 }

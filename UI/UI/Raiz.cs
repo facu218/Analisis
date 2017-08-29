@@ -51,12 +51,14 @@ namespace Metods
                     else if (funcion.Function(xi)*funcion.Function(xr)>0)
                     {
                         xi = xr;
+                        xant = xr;
                     }
                     else
                     {
                         xd = xr;
+                        xant = xr;
                     }
-                    xant = xr;
+                    
                 }
 
             }
@@ -64,6 +66,44 @@ namespace Metods
             {
                 return "No se encuentra ninguna raiz entre esos dos valores. Ingrese nuevos.";
             }else return "El resultado de la raiz entre la biseccion es "+ Convert.ToString(raizFinal);
+        }
+
+        public string Tangente(double xi)
+        {
+            var funcion = new Funcion();
+            Boolean flagSalida = false;
+            double raizFinal = 0;
+            int c = 0;
+            double Tole = 0.0001;
+            double xant = 0;
+            int Ite = 100;
+            double der = (funcion.Function(xi + Tole) - funcion.Function(xi)) / Tole;
+            while (flagSalida == false)
+            {
+                if (Math.Abs(funcion.Function(xi))<Tole)
+                {
+                    raizFinal = xi;
+                    flagSalida = true;
+                }
+                else // xi es mayor a la tolerancia
+                {
+                    c++;
+                    double xr = xi - funcion.Function(xi) / der;
+                    double error = Math.Abs((xr - xant) / xr);
+                    
+                    if (Math.Abs(funcion.Function(xr)) < Tole || error < Tole || c >= Ite)
+                    {
+                        raizFinal = xr;
+                        flagSalida = true;
+                    }
+                    else
+                    {
+                        xi = xr;
+                        xant = xr;
+                    }                
+                }
+            }
+            return "El resultado de la raiz por la tangente es: " + raizFinal.ToString("0.####");
         }
     }
 }

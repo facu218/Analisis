@@ -36,7 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtValor2 = new System.Windows.Forms.TextBox();
             this.txtValor1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPrincipal = new System.Windows.Forms.Label();
             this.picBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,6 +44,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tangenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reglaFalsaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlRaiz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -63,7 +65,9 @@
             // raizToolStripMenuItem
             // 
             this.raizToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.biseccionToolStripMenuItem});
+            this.biseccionToolStripMenuItem,
+            this.tangenteToolStripMenuItem,
+            this.reglaFalsaToolStripMenuItem});
             this.raizToolStripMenuItem.Name = "raizToolStripMenuItem";
             this.raizToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.raizToolStripMenuItem.Text = "Raiz";
@@ -71,7 +75,7 @@
             // biseccionToolStripMenuItem
             // 
             this.biseccionToolStripMenuItem.Name = "biseccionToolStripMenuItem";
-            this.biseccionToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.biseccionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.biseccionToolStripMenuItem.Text = "Biseccion";
             this.biseccionToolStripMenuItem.Click += new System.EventHandler(this.biseccionToolStripMenuItem_Click);
             // 
@@ -90,7 +94,7 @@
             this.pnlRaiz.Controls.Add(this.button1);
             this.pnlRaiz.Controls.Add(this.txtValor2);
             this.pnlRaiz.Controls.Add(this.txtValor1);
-            this.pnlRaiz.Controls.Add(this.label1);
+            this.pnlRaiz.Controls.Add(this.lblPrincipal);
             this.pnlRaiz.Location = new System.Drawing.Point(49, 87);
             this.pnlRaiz.Name = "pnlRaiz";
             this.pnlRaiz.Size = new System.Drawing.Size(234, 100);
@@ -121,19 +125,19 @@
             this.txtValor1.Size = new System.Drawing.Size(45, 20);
             this.txtValor1.TabIndex = 1;
             // 
-            // label1
+            // lblPrincipal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ingrese 2 valores para biseccion";
+            this.lblPrincipal.AutoSize = true;
+            this.lblPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrincipal.Location = new System.Drawing.Point(3, 0);
+            this.lblPrincipal.Name = "lblPrincipal";
+            this.lblPrincipal.Size = new System.Drawing.Size(213, 17);
+            this.lblPrincipal.TabIndex = 0;
+            this.lblPrincipal.Text = "Ingrese 2 valores para biseccion";
             // 
             // picBox
             // 
-            this.picBox.BackColor = System.Drawing.SystemColors.Desktop;
+            this.picBox.BackColor = System.Drawing.SystemColors.Control;
             this.picBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picBox.Location = new System.Drawing.Point(357, 27);
             this.picBox.Name = "picBox";
@@ -144,7 +148,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label3);
@@ -156,7 +160,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(188, 3);
+            this.button2.Location = new System.Drawing.Point(154, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -169,13 +173,13 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Coordenadas:";
+            this.label3.Text = "Escala:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 4);
+            this.textBox2.Location = new System.Drawing.Point(48, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 2;
@@ -199,6 +203,20 @@
             this.textBox1.Size = new System.Drawing.Size(258, 20);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "(X-3)^2-1";
+            // 
+            // tangenteToolStripMenuItem
+            // 
+            this.tangenteToolStripMenuItem.Name = "tangenteToolStripMenuItem";
+            this.tangenteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tangenteToolStripMenuItem.Text = "Tangente";
+            this.tangenteToolStripMenuItem.Click += new System.EventHandler(this.tangenteToolStripMenuItem_Click);
+            // 
+            // reglaFalsaToolStripMenuItem
+            // 
+            this.reglaFalsaToolStripMenuItem.Name = "reglaFalsaToolStripMenuItem";
+            this.reglaFalsaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reglaFalsaToolStripMenuItem.Text = "Regla falsa";
+            this.reglaFalsaToolStripMenuItem.Click += new System.EventHandler(this.reglaFalsaToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -238,7 +256,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtValor2;
         private System.Windows.Forms.TextBox txtValor1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPrincipal;
         private System.Windows.Forms.PictureBox picBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
@@ -246,6 +264,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem tangenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reglaFalsaToolStripMenuItem;
     }
 }
 
