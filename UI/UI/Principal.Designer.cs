@@ -33,6 +33,7 @@
             this.biseccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tangenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reglaFalsaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.secanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.pnlRaiz = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,7 +47,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.secanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtIte = new System.Windows.Forms.TextBox();
+            this.txtTole = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlRaiz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -77,27 +82,34 @@
             // biseccionToolStripMenuItem
             // 
             this.biseccionToolStripMenuItem.Name = "biseccionToolStripMenuItem";
-            this.biseccionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.biseccionToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.biseccionToolStripMenuItem.Text = "Biseccion";
             this.biseccionToolStripMenuItem.Click += new System.EventHandler(this.biseccionToolStripMenuItem_Click);
             // 
             // tangenteToolStripMenuItem
             // 
             this.tangenteToolStripMenuItem.Name = "tangenteToolStripMenuItem";
-            this.tangenteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tangenteToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.tangenteToolStripMenuItem.Text = "Tangente";
             this.tangenteToolStripMenuItem.Click += new System.EventHandler(this.tangenteToolStripMenuItem_Click);
             // 
             // reglaFalsaToolStripMenuItem
             // 
             this.reglaFalsaToolStripMenuItem.Name = "reglaFalsaToolStripMenuItem";
-            this.reglaFalsaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reglaFalsaToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.reglaFalsaToolStripMenuItem.Text = "Regla falsa";
             this.reglaFalsaToolStripMenuItem.Click += new System.EventHandler(this.reglaFalsaToolStripMenuItem_Click);
             // 
+            // secanteToolStripMenuItem
+            // 
+            this.secanteToolStripMenuItem.Name = "secanteToolStripMenuItem";
+            this.secanteToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.secanteToolStripMenuItem.Text = "Secante";
+            this.secanteToolStripMenuItem.Click += new System.EventHandler(this.secanteToolStripMenuItem_Click);
+            // 
             // txtResultado
             // 
-            this.txtResultado.Location = new System.Drawing.Point(0, 193);
+            this.txtResultado.Location = new System.Drawing.Point(0, 242);
             this.txtResultado.Name = "txtResultado";
             this.txtResultado.ReadOnly = true;
             this.txtResultado.Size = new System.Drawing.Size(351, 20);
@@ -107,19 +119,24 @@
             // 
             this.pnlRaiz.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnlRaiz.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlRaiz.Controls.Add(this.label5);
+            this.pnlRaiz.Controls.Add(this.txtTole);
+            this.pnlRaiz.Controls.Add(this.txtIte);
+            this.pnlRaiz.Controls.Add(this.label4);
+            this.pnlRaiz.Controls.Add(this.label1);
             this.pnlRaiz.Controls.Add(this.button1);
             this.pnlRaiz.Controls.Add(this.txtValor2);
             this.pnlRaiz.Controls.Add(this.txtValor1);
             this.pnlRaiz.Controls.Add(this.lblPrincipal);
-            this.pnlRaiz.Location = new System.Drawing.Point(49, 87);
+            this.pnlRaiz.Location = new System.Drawing.Point(7, 62);
             this.pnlRaiz.Name = "pnlRaiz";
-            this.pnlRaiz.Size = new System.Drawing.Size(234, 100);
+            this.pnlRaiz.Size = new System.Drawing.Size(296, 138);
             this.pnlRaiz.TabIndex = 2;
             this.pnlRaiz.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(78, 62);
+            this.button1.Location = new System.Drawing.Point(205, 107);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -129,16 +146,16 @@
             // 
             // txtValor2
             // 
-            this.txtValor2.Location = new System.Drawing.Point(148, 36);
+            this.txtValor2.Location = new System.Drawing.Point(141, 33);
             this.txtValor2.Name = "txtValor2";
-            this.txtValor2.Size = new System.Drawing.Size(45, 20);
+            this.txtValor2.Size = new System.Drawing.Size(50, 20);
             this.txtValor2.TabIndex = 2;
             // 
             // txtValor1
             // 
-            this.txtValor1.Location = new System.Drawing.Point(36, 36);
+            this.txtValor1.Location = new System.Drawing.Point(75, 33);
             this.txtValor1.Name = "txtValor1";
-            this.txtValor1.Size = new System.Drawing.Size(45, 20);
+            this.txtValor1.Size = new System.Drawing.Size(50, 20);
             this.txtValor1.TabIndex = 1;
             // 
             // lblPrincipal
@@ -169,7 +186,7 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Location = new System.Drawing.Point(0, 219);
+            this.panel1.Location = new System.Drawing.Point(0, 315);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(351, 30);
             this.panel1.TabIndex = 4;
@@ -216,16 +233,55 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(71, 27);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 20);
+            this.textBox1.Size = new System.Drawing.Size(232, 20);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "(X-3)^2-1";
             // 
-            // secanteToolStripMenuItem
+            // label1
             // 
-            this.secanteToolStripMenuItem.Name = "secanteToolStripMenuItem";
-            this.secanteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.secanteToolStripMenuItem.Text = "Secante";
-            this.secanteToolStripMenuItem.Click += new System.EventHandler(this.secanteToolStripMenuItem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Valores:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 74);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Iteraciones:";
+            // 
+            // txtIte
+            // 
+            this.txtIte.Location = new System.Drawing.Point(75, 71);
+            this.txtIte.Name = "txtIte";
+            this.txtIte.Size = new System.Drawing.Size(50, 20);
+            this.txtIte.TabIndex = 6;
+            this.txtIte.Text = "100";
+            // 
+            // txtTole
+            // 
+            this.txtTole.Location = new System.Drawing.Point(75, 110);
+            this.txtTole.Name = "txtTole";
+            this.txtTole.Size = new System.Drawing.Size(50, 20);
+            this.txtTole.TabIndex = 7;
+            this.txtTole.Text = "0.0001";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Tolerancia:";
             // 
             // Principal
             // 
@@ -276,6 +332,11 @@
         private System.Windows.Forms.ToolStripMenuItem tangenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reglaFalsaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem secanteToolStripMenuItem;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtTole;
+        private System.Windows.Forms.TextBox txtIte;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
     }
 }
 

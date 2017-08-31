@@ -36,25 +36,27 @@ namespace UI
             //double xi = Convert.ToDouble(txtValor1.Text);
             //double xd = Convert.ToDouble(txtValor2.Text);
             pnlRaiz.Visible = false;
+            int ite = Convert.ToInt16(txtIte.Text);
+            double tole = Convert.ToDouble(txtTole.Text);
             if (flgBis== true)
             {
                 double xi = Convert.ToDouble(txtValor1.Text);
                 double xd = Convert.ToDouble(txtValor2.Text);
-                txtResultado.Text = a.Biseccion(xi, xd);
+                txtResultado.Text = a.Biseccion(xi, xd, ite, tole);
             }else if (flgTan == true)
             {
                 double xi = Convert.ToDouble(txtValor1.Text);
-                txtResultado.Text = a.Tangente(xi);
+                txtResultado.Text = a.Tangente(xi, ite, tole);
             }else if(flgReg == true)
             {
                 double xi = Convert.ToDouble(txtValor1.Text);
                 double xd = Convert.ToDouble(txtValor2.Text);
-                txtResultado.Text = a.ReglaFalsa(xi,xd);
+                txtResultado.Text = a.ReglaFalsa(xi,xd, ite, tole);
             }else if (flgSec == true)
             {
                 double x0 = Convert.ToDouble(txtValor1.Text);
                 double x1 = Convert.ToDouble(txtValor2.Text);
-                txtResultado.Text = a.Secante(x0, x1);
+                txtResultado.Text = a.Secante(x0, x1, ite, tole);
             }
             flgBis = false;
             flgTan = false;

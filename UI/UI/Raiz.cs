@@ -8,15 +8,15 @@ namespace Metods
 {
     public class ResultadoRaiz
     {        
-        public string Biseccion (double xi, double xd)
+        public string Biseccion (double xi, double xd, int ite, double toler)
         {
             var funcion = new Funcion();
             Boolean flagSalida = false, flgNoRaiz = false;
             double raizFinal =0;
             int c=0;
-            double Tole = 0.001;
+            double Tole = toler;
             double xant = 0;
-            int Ite = 100;
+            int Ite = ite;
             while (flagSalida == false)
             {
                 if (funcion.Function(xi) * funcion.Function(xd) == 0)
@@ -66,15 +66,15 @@ namespace Metods
             }else return "El resultado de la raiz entre la biseccion es " + raizFinal.ToString("0.##");
         }
 
-        public string Tangente(double xi)
+        public string Tangente(double xi, int ite, double toler)
         {
             var funcion = new Funcion();
             Boolean flagSalida = false;
             double raizFinal = 0;
             int c = 0;
-            double Tole = 0.0001;
+            double Tole = toler;
             double xant = 0;
-            int Ite = 100;
+            int Ite = ite;
             double der = (funcion.Function(xi + Tole) - funcion.Function(xi)) / Tole;
             while (flagSalida == false)
             {
@@ -103,19 +103,19 @@ namespace Metods
             return "El resultado de la raiz por la tangente es: " + raizFinal.ToString("0.##");
         }
 
-        public string Secante(double x0, double x1)
+        public string Secante(double x0, double x1, int ite, double toler)
         {
             var funcion = new Funcion();
             Boolean flagSalida = false;
             double raizFinal = 0;
             int c = 0;
-            double Tole = 0.0001;
+            double Tole = toler;
             double xant = x0;
-            int Ite = 100;
+            int Ite = ite;
             double sec = (funcion.Function(x1)*x0 - funcion.Function(x0)*x1) / funcion.Function(x1)- funcion.Function(x0);
             while (flagSalida == false)
             {
-                if (funcion.Function(x0) * funcion.Function(x1) == Tole)
+                if (funcion.Function(x0) * funcion.Function(x1) == 0)
                 {
                     if (funcion.Function(x0) == 0)  
                     {
@@ -147,18 +147,18 @@ namespace Metods
                     }
                 }
             }
-            return "El resultado de la raiz por la tangente es: " + raizFinal.ToString("0.##");
+            return "El resultado de la raiz por la secante es: " + raizFinal.ToString("0.####");
         }
 
-        public string ReglaFalsa(double xi, double xd)
+        public string ReglaFalsa(double xi, double xd, int ite, double toler)
         {
             var funcion = new Funcion();
             Boolean flagSalida = false, flgNoRaiz = false;
             double raizFinal = 0;
             int c = 0;
-            double Tole = 0.0001;
+            double Tole = toler;
             double xant = 0;
-            int Ite = 100;
+            int Ite = ite;
             while (flagSalida == false)
             {
                 if (funcion.Function(xi) * funcion.Function(xd) == 0)
