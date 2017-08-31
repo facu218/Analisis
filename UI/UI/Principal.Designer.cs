@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.raizToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.biseccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tangenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reglaFalsaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.pnlRaiz = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,8 +46,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tangenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reglaFalsaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.secanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlRaiz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -67,7 +68,8 @@
             this.raizToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.biseccionToolStripMenuItem,
             this.tangenteToolStripMenuItem,
-            this.reglaFalsaToolStripMenuItem});
+            this.reglaFalsaToolStripMenuItem,
+            this.secanteToolStripMenuItem});
             this.raizToolStripMenuItem.Name = "raizToolStripMenuItem";
             this.raizToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.raizToolStripMenuItem.Text = "Raiz";
@@ -78,6 +80,20 @@
             this.biseccionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.biseccionToolStripMenuItem.Text = "Biseccion";
             this.biseccionToolStripMenuItem.Click += new System.EventHandler(this.biseccionToolStripMenuItem_Click);
+            // 
+            // tangenteToolStripMenuItem
+            // 
+            this.tangenteToolStripMenuItem.Name = "tangenteToolStripMenuItem";
+            this.tangenteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tangenteToolStripMenuItem.Text = "Tangente";
+            this.tangenteToolStripMenuItem.Click += new System.EventHandler(this.tangenteToolStripMenuItem_Click);
+            // 
+            // reglaFalsaToolStripMenuItem
+            // 
+            this.reglaFalsaToolStripMenuItem.Name = "reglaFalsaToolStripMenuItem";
+            this.reglaFalsaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reglaFalsaToolStripMenuItem.Text = "Regla falsa";
+            this.reglaFalsaToolStripMenuItem.Click += new System.EventHandler(this.reglaFalsaToolStripMenuItem_Click);
             // 
             // txtResultado
             // 
@@ -204,19 +220,12 @@
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "(X-3)^2-1";
             // 
-            // tangenteToolStripMenuItem
+            // secanteToolStripMenuItem
             // 
-            this.tangenteToolStripMenuItem.Name = "tangenteToolStripMenuItem";
-            this.tangenteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tangenteToolStripMenuItem.Text = "Tangente";
-            this.tangenteToolStripMenuItem.Click += new System.EventHandler(this.tangenteToolStripMenuItem_Click);
-            // 
-            // reglaFalsaToolStripMenuItem
-            // 
-            this.reglaFalsaToolStripMenuItem.Name = "reglaFalsaToolStripMenuItem";
-            this.reglaFalsaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.reglaFalsaToolStripMenuItem.Text = "Regla falsa";
-            this.reglaFalsaToolStripMenuItem.Click += new System.EventHandler(this.reglaFalsaToolStripMenuItem_Click);
+            this.secanteToolStripMenuItem.Name = "secanteToolStripMenuItem";
+            this.secanteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.secanteToolStripMenuItem.Text = "Secante";
+            this.secanteToolStripMenuItem.Click += new System.EventHandler(this.secanteToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -266,6 +275,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem tangenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reglaFalsaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem secanteToolStripMenuItem;
     }
 }
 

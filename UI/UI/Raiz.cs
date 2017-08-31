@@ -102,6 +102,7 @@ namespace Metods
             }
             return "El resultado de la raiz por la tangente es: " + raizFinal.ToString("0.##");
         }
+
         public string Secante(double x0, double x1)
         {
             var funcion = new Funcion();

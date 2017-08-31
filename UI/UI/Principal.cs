@@ -21,7 +21,7 @@ namespace UI
         System.Drawing.Pen mylapiz1 = new System.Drawing.Pen(System.Drawing.Color.Black);
         System.Drawing.Pen mylapiz2 = new System.Drawing.Pen(System.Drawing.Color.Red);
 
-        Boolean flgBis, flgReg, flgTan = false;
+        Boolean flgBis, flgReg, flgTan, flgSec = false;
         private void biseccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flgBis = true;
@@ -50,6 +50,11 @@ namespace UI
                 double xi = Convert.ToDouble(txtValor1.Text);
                 double xd = Convert.ToDouble(txtValor2.Text);
                 txtResultado.Text = a.ReglaFalsa(xi,xd);
+            }else if (flgSec == true)
+            {
+                double x0 = Convert.ToDouble(txtValor1.Text);
+                double x1 = Convert.ToDouble(txtValor2.Text);
+                txtResultado.Text = a.Secante(x0, x1);
             }
             flgBis = false;
             flgTan = false;
@@ -110,6 +115,14 @@ namespace UI
         private void button2_Click(object sender, EventArgs e)
         {
             Graficar();
+        }
+
+        private void secanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flgSec = true;
+            lblPrincipal.Text = "Ingrese dos valores para la Secante";
+            txtValor2.Visible = true;
+            pnlRaiz.Visible = true;
         }
 
         private void reglaFalsaToolStripMenuItem_Click(object sender, EventArgs e)
