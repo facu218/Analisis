@@ -141,7 +141,7 @@ namespace Metods
                     }
                     else
                     {
-                        x0 = x1;
+                        ////x0 = x1;
                         x1 = xr;
                         xant = xr;
                     }
