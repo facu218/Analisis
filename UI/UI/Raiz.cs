@@ -115,7 +115,7 @@ namespace Metods
             double sec = (funcion.Function(x1)*x0 - funcion.Function(x0)*x1) / funcion.Function(x1)- funcion.Function(x0);
             while (flagSalida == false)
             {
-                if (funcion.Function(x0) * funcion.Function(x1) == Tole)
+                if (funcion.Function(x0) * funcion.Function(x1) == 0)
                 {
                     if (funcion.Function(x0) == 0)  
                     {
@@ -141,7 +141,7 @@ namespace Metods
                     }
                     else
                     {
-                        x0 = x1;
+                        ////x0 = x1;
                         x1 = xr;
                         xant = xr;
                     }
