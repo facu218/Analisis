@@ -103,7 +103,7 @@ namespace Metods
             return "El resultado de la raiz por la tangente es: " + raizFinal.ToString("0.##");
         }
 
-        public string Secante(double x0, double x1, int ite, double toler)
+        public string Secante(double x1, double x0, int ite, double toler)
         {
             var funcion = new Funcion();
             Boolean flagSalida = false;
@@ -112,7 +112,7 @@ namespace Metods
             double Tole = toler;
             double xant = x0;
             int Ite = ite;
-            double sec = (funcion.Function(x1)*x0 - funcion.Function(x0)*x1) / funcion.Function(x1)- funcion.Function(x0);
+            //double sec = (funcion.Function(x1)*x0 - funcion.Function(x0)*x1) / funcion.Function(x1)- funcion.Function(x0);
             while (flagSalida == false)
             {
                 if (funcion.Function(x0) * funcion.Function(x1) == 0)
@@ -131,19 +131,19 @@ namespace Metods
                 else // xi es mayor a la tolerancia
                 {
                     c++;
-                    double xr = x1 - funcion.Function(x1) / sec;
-                    double error = Math.Abs((xr - xant) / xr);
+                    double x2 = (funcion.Function(x1) * x0 - funcion.Function(x0) * x1) / (funcion.Function(x1) - funcion.Function(x0));
+                    double error = Math.Abs((x2 - xant) / x2);
 
-                    if (Math.Abs(funcion.Function(xr)) < Tole || error < Tole || c >= Ite)
+                    if (Math.Abs(funcion.Function(x2)) < Tole || error < Tole || c >= Ite)
                     {
-                        raizFinal = xr;
+                        raizFinal = x2;
                         flagSalida = true;
                     }
                     else
                     {
-                        ////x0 = x1;
-                        x1 = xr;
-                        xant = xr;
+                        x0 = x1;
+                        x1 = x2;
+                        xant = x2;
                     }
                 }
             }

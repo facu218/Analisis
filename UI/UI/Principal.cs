@@ -1,4 +1,5 @@
-﻿using Metods;
+﻿//using org.mariuszgromada.math.mxparser;
+using Metods;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,7 @@ namespace UI
         private void biseccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flgBis = true;
-            lblPrincipal.Text = "Ingrese dos valores para biseccion";
+            lblPrincipal.Text = "Ingrese dos valores para biseccion:";
             txtValor2.Visible = true;
             pnlRaiz.Visible = true;
         }
@@ -122,14 +123,14 @@ namespace UI
         private void secanteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flgSec = true;
-            lblPrincipal.Text = "Ingrese dos valores para la Secante";
+            lblPrincipal.Text = "Ingrese dos valores para la Secante:";
             txtValor2.Visible = true;
             pnlRaiz.Visible = true;
         }
 
         private void reglaFalsaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lblPrincipal.Text = "Ingrese 2 valores para regla falsa";
+            lblPrincipal.Text = "Ingrese 2 valores para regla falsa:";
             txtValor2.Visible = true;
             pnlRaiz.Visible = true;
             flgReg = true;
@@ -142,7 +143,7 @@ namespace UI
 
         private void tangenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lblPrincipal.Text = "Ingrese un valor para la tangente...";
+            lblPrincipal.Text = "Ingrese un valor para la tangente:";
             txtValor2.Visible = false;
             pnlRaiz.Visible = true;
             flgTan = true;

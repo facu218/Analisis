@@ -36,6 +36,11 @@
             this.secanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.pnlRaiz = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTole = new System.Windows.Forms.TextBox();
+            this.txtIte = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtValor2 = new System.Windows.Forms.TextBox();
             this.txtValor1 = new System.Windows.Forms.TextBox();
@@ -47,11 +52,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtIte = new System.Windows.Forms.TextBox();
-            this.txtTole = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlRaiz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -133,6 +133,52 @@
             this.pnlRaiz.Size = new System.Drawing.Size(296, 138);
             this.pnlRaiz.TabIndex = 2;
             this.pnlRaiz.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Tolerancia:";
+            // 
+            // txtTole
+            // 
+            this.txtTole.Location = new System.Drawing.Point(75, 110);
+            this.txtTole.Name = "txtTole";
+            this.txtTole.Size = new System.Drawing.Size(50, 20);
+            this.txtTole.TabIndex = 7;
+            this.txtTole.Text = "0,0001";
+            // 
+            // txtIte
+            // 
+            this.txtIte.Location = new System.Drawing.Point(75, 71);
+            this.txtIte.Name = "txtIte";
+            this.txtIte.Size = new System.Drawing.Size(50, 20);
+            this.txtIte.TabIndex = 6;
+            this.txtIte.Text = "100";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 74);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Iteraciones:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Valores:";
             // 
             // button1
             // 
@@ -236,52 +282,6 @@
             this.textBox1.Size = new System.Drawing.Size(232, 20);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "(X-3)^2-1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Valores:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Iteraciones:";
-            // 
-            // txtIte
-            // 
-            this.txtIte.Location = new System.Drawing.Point(75, 71);
-            this.txtIte.Name = "txtIte";
-            this.txtIte.Size = new System.Drawing.Size(50, 20);
-            this.txtIte.TabIndex = 6;
-            this.txtIte.Text = "100";
-            // 
-            // txtTole
-            // 
-            this.txtTole.Location = new System.Drawing.Point(75, 110);
-            this.txtTole.Name = "txtTole";
-            this.txtTole.Size = new System.Drawing.Size(50, 20);
-            this.txtTole.TabIndex = 7;
-            this.txtTole.Text = "0.0001";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 113);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Tolerancia:";
             // 
             // Principal
             // 
