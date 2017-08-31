@@ -14,7 +14,7 @@ namespace Metods
             Boolean flagSalida = false, flgNoRaiz = false;
             double raizFinal =0;
             int c=0;
-            double Tole = 0.0001;
+            double Tole = 0.001;
             double xant = 0;
             int Ite = 100;
             while (flagSalida == false)
@@ -43,7 +43,7 @@ namespace Metods
                     double error = Math.Abs((xr - xant) / xr);
                     c++;
 
-                    if (funcion.Function(xr)< Tole  || error< Tole|| c>= Ite )
+                    if (Math.Abs(funcion.Function(xr))< Tole  || error< Tole|| c>= Ite )
                     {
                         raizFinal = xr;
                         flagSalida = true;
@@ -58,14 +58,12 @@ namespace Metods
                         xd = xr;
                         xant = xr;
                     }
-                    
                 }
-
             }
             if (flgNoRaiz == true)
             {
                 return "No se encuentra ninguna raiz entre esos dos valores. Ingrese nuevos.";
-            }else return "El resultado de la raiz entre la biseccion es "+ Convert.ToString(raizFinal);
+            }else return "El resultado de la raiz entre la biseccion es " + raizFinal.ToString("0.##");
         }
 
         public string Tangente(double xi)
@@ -90,7 +88,6 @@ namespace Metods
                     c++;
                     double xr = xi - funcion.Function(xi) / der;
                     double error = Math.Abs((xr - xant) / xr);
-                    
                     if (Math.Abs(funcion.Function(xr)) < Tole || error < Tole || c >= Ite)
                     {
                         raizFinal = xr;
@@ -103,7 +100,53 @@ namespace Metods
                     }                
                 }
             }
-            return "El resultado de la raiz por la tangente es: " + raizFinal.ToString("0.####");
+            return "El resultado de la raiz por la tangente es: " + raizFinal.ToString("0.##");
+        }
+        public string Secante(double x0, double x1)
+        {
+            var funcion = new Funcion();
+            Boolean flagSalida = false;
+            double raizFinal = 0;
+            int c = 0;
+            double Tole = 0.0001;
+            double xant = x0;
+            int Ite = 100;
+            double sec = (funcion.Function(x1)*x0 - funcion.Function(x0)*x1) / funcion.Function(x1)- funcion.Function(x0);
+            while (flagSalida == false)
+            {
+                if (funcion.Function(x0) * funcion.Function(x1) == Tole)
+                {
+                    if (funcion.Function(x0) == 0)  
+                    {
+                        raizFinal = x0;
+                        flagSalida = true;
+                    }
+                    else
+                    {
+                        raizFinal = x1;
+                        flagSalida = true;
+                    }
+                }
+                else // xi es mayor a la tolerancia
+                {
+                    c++;
+                    double xr = x1 - funcion.Function(x1) / sec;
+                    double error = Math.Abs((xr - xant) / xr);
+
+                    if (Math.Abs(funcion.Function(xr)) < Tole || error < Tole || c >= Ite)
+                    {
+                        raizFinal = xr;
+                        flagSalida = true;
+                    }
+                    else
+                    {
+                        x0 = x1;
+                        x1 = xr;
+                        xant = xr;
+                    }
+                }
+            }
+            return "El resultado de la raiz por la tangente es: " + raizFinal.ToString("0.##");
         }
 
         public string ReglaFalsa(double xi, double xd)
@@ -142,7 +185,7 @@ namespace Metods
                     double error = Math.Abs((xr - xant) / xr);
                     c++;
 
-                    if (funcion.Function(xr) < Tole || error < Tole || c >= Ite)
+                    if (Math.Abs(funcion.Function(xr)) < Tole || error < Tole || c >= Ite)
                     {
                         raizFinal = xr;
                         flagSalida = true;
@@ -157,13 +200,12 @@ namespace Metods
                     }
                     xant = xr;
                 }
-
             }
             if (flgNoRaiz == true)
             {
                 return "No se encuentra ninguna raiz entre esos dos valores. Ingrese nuevos.";
             }
-            else return "El resultado de la raiz entre la regla falsa es " + Convert.ToString(raizFinal);
+            else return "El resultado de la raiz entre la regla falsa es " + raizFinal.ToString("0.##");
         }
     }
 }
