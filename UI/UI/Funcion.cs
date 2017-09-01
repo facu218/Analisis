@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using org.mariuszgromada.math.mxparser;
 
 namespace Metods
 {
@@ -10,7 +11,8 @@ namespace Metods
     {
         public double Function (double x)
         {
-            return Math.Pow(x-3 , 2)-1;
+            Function f = new Function("f(x) = abs((x^2)-4)+2*x");
+            return f.calculate(x);
         }
     }
 }

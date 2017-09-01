@@ -105,7 +105,7 @@ namespace UI
                 puntoY2 = valores[con] * ycentro;
 
                 Dibujo.DrawLine(mylapiz2, Convert.ToSingle(puntoX1), Convert.ToSingle(puntoY1), Convert.ToSingle(puntoX2), Convert.ToSingle(puntoY2));
-                con = con + 1;
+                con = con + 1;                                                                                   
             }
         }
 
