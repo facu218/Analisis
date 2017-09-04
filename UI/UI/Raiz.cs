@@ -116,14 +116,11 @@ namespace Metods
             double error = 0;
             double x2 = 0;
             int Ite = ite;
-<<<<<<< HEAD
             double sec(double xa0, double xa1)
             {
                 return ((funcion.Function(xa1) * xa0 - funcion.Function(xa0) * xa1) / (funcion.Function(xa1) - funcion.Function(xa0)));
             };
-=======
-            //double sec = (funcion.Function(x1)*x0 - funcion.Function(x0)*x1) / funcion.Function(x1)- funcion.Function(x0);
->>>>>>> d943f7d415581911d22427ed8aaebb24a2d93690
+
             while (flagSalida == false)
             {
                 if (funcion.Function(x0) * funcion.Function(x1) == 0)
@@ -142,17 +139,11 @@ namespace Metods
                 else
                 {
                     c++;
-<<<<<<< HEAD
                     x2 = sec(x0,x1);
                     error = Math.Abs((x2 - xant) / x2);
 
                     if (Math.Abs(funcion.Function(x1)) < Tole || error < Tole || c >= Ite)
-=======
-                    double x2 = (funcion.Function(x1) * x0 - funcion.Function(x0) * x1) / (funcion.Function(x1) - funcion.Function(x0));
-                    double error = Math.Abs((x2 - xant) / x2);
 
-                    if (Math.Abs(funcion.Function(x2)) < Tole || error < Tole || c >= Ite)
->>>>>>> d943f7d415581911d22427ed8aaebb24a2d93690
                     {
                         raizFinal = x2;
                         flagSalida = true;
@@ -161,11 +152,7 @@ namespace Metods
                     {
                         x0 = x1;
                         x1 = x2;
-<<<<<<< HEAD
-                        xant = x1;
-=======
                         xant = x2;
->>>>>>> d943f7d415581911d22427ed8aaebb24a2d93690
                     }
                 }
             }

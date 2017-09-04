@@ -56,3 +56,4 @@ C:\Users\Usuario\Documents\GitHub\Analisis\UI\UI\obj\Debug\UI.csproj.CoreCompile
 C:\Users\Usuario\Documents\GitHub\Analisis\UI\UI\obj\Debug\UI.exe
 C:\Users\Usuario\Documents\GitHub\Analisis\UI\UI\obj\Debug\UI.pdb
 C:\Users\gianfranco\Documents\GitHub\Analisis\UI\UI\bin\Debug\MathParser.org-mXparser.Net452.dll
+C:\Users\facuc\Documents\GitHub\Analisis\UI\UI\bin\Debug\MathParser.org-mXparser.Net452.dll
