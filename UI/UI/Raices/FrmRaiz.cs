@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Principal : Form
+    public partial class FrmRaiz : Form
     {
-        public Principal()
+        public FrmRaiz()
         {
             InitializeComponent();
         }

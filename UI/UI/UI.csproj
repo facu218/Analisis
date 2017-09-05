@@ -52,18 +52,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Raiz.cs" />
-    <Compile Include="Principal.cs">
+    <Compile Include="Raices\Raiz.cs" />
+    <Compile Include="Raices\FrmRaiz.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="Raices\FrmRaiz.Designer.cs">
+      <DependentUpon>FrmRaiz.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funcion.cs" />
+    <Compile Include="Raices\Funcion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="SistEcuaciones\frmSistEc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SistEcuaciones\frmSistEc.Designer.cs">
+      <DependentUpon>frmSistEc.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Raices\FrmRaiz.resx">
+      <DependentUpon>FrmRaiz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SistEcuaciones\frmSistEc.resx">
+      <DependentUpon>frmSistEc.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -229,6 +238,7 @@
     <Content Include="docs\script.js" />
     <Content Include="docs\stylesheet.css" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

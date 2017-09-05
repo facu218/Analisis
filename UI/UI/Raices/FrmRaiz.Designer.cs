@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class Principal
+    partial class FrmRaiz
     {
         /// <summary>
         /// Required designer variable.
