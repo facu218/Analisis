@@ -24,7 +24,8 @@ namespace UI.SistEcuaciones
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-        
+            matriz.ColumnCount.Equals(Convert.ToInt32(textBox1.Text));
+            matriz.RowCount.Equals(Convert.ToInt32(textBox1.Text));
         }
     }
 }
