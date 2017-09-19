@@ -24,8 +24,23 @@ namespace UI.SistEcuaciones
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            matriz.ColumnCount.Equals(Convert.ToInt32(textBox1.Text));
-            matriz.RowCount.Equals(Convert.ToInt32(textBox1.Text));
+            int n = Convert.ToInt32(textBox1.Text);
+            dgvGrilla.ColumnCount = n + 1;
+            dgvGrilla.RowCount = n ;
+        }
+
+        private void btnCargarMatriz_Click(object sender, EventArgs e)
+        {
+            int n = Convert.ToInt32(textBox1.Text);
+            double[,] Matriz = new double[n,n+1];
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Matriz[j, i] = Convert.ToDouble(dgvGrilla[i, j].Value);
+                }
+            }
         }
     }
 }
