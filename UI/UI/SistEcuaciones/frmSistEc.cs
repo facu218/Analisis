@@ -26,13 +26,13 @@ namespace UI.SistEcuaciones
         {
             int n = Convert.ToInt32(textBox1.Text);
             dgvGrilla.ColumnCount = n + 1;
-            dgvGrilla.RowCount = n ;
+            dgvGrilla.RowCount = n;
         }
 
         private void btnCargarMatriz_Click(object sender, EventArgs e)
         {
             int n = Convert.ToInt32(textBox1.Text);
-            double[,] Matriz = new double[n,n+1];
+            double[,] Matriz = new double[n, n + 1];
 
             for (int i = 0; i < n; i++)
             {
