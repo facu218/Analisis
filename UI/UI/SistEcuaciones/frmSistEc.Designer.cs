@@ -40,12 +40,15 @@
             // 
             this.dgvGrilla.AllowUserToAddRows = false;
             this.dgvGrilla.AllowUserToDeleteRows = false;
+            this.dgvGrilla.AllowUserToResizeColumns = false;
+            this.dgvGrilla.AllowUserToResizeRows = false;
+            this.dgvGrilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrilla.ColumnHeadersVisible = false;
-            this.dgvGrilla.Location = new System.Drawing.Point(44, 73);
+            this.dgvGrilla.Location = new System.Drawing.Point(44, 61);
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.RowHeadersVisible = false;
-            this.dgvGrilla.Size = new System.Drawing.Size(240, 150);
+            this.dgvGrilla.Size = new System.Drawing.Size(543, 150);
             this.dgvGrilla.TabIndex = 0;
             // 
             // label1
@@ -76,7 +79,7 @@
             // 
             // btnCargarMatriz
             // 
-            this.btnCargarMatriz.Location = new System.Drawing.Point(321, 188);
+            this.btnCargarMatriz.Location = new System.Drawing.Point(44, 217);
             this.btnCargarMatriz.Name = "btnCargarMatriz";
             this.btnCargarMatriz.Size = new System.Drawing.Size(75, 35);
             this.btnCargarMatriz.TabIndex = 4;

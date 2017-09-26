@@ -68,6 +68,7 @@
     <Compile Include="SistEcuaciones\frmSistEc.Designer.cs">
       <DependentUpon>frmSistEc.cs</DependentUpon>
     </Compile>
+    <Compile Include="SistEcuaciones\Metodos.cs" />
     <EmbeddedResource Include="Raices\FrmRaiz.resx">
       <DependentUpon>FrmRaiz.cs</DependentUpon>
     </EmbeddedResource>
