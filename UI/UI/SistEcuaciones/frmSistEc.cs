@@ -47,7 +47,7 @@ namespace UI.SistEcuaciones
             temp = a.GaussJordan(Matriz, n);
             for (int i = 0; i < n; i++)
             {
-                dgvResultado[0, i].Value = Convert.ToString(temp[i]);
+                dgvResultado[0,i].Value = Convert.ToString(temp[i]);
             }
         }
 

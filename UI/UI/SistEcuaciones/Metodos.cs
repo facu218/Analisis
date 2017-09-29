@@ -58,11 +58,14 @@ namespace UI.SistEcuaciones
                 {
                     for (int k=0; k<variables; k++)
                     {
-                        temp[i] = matriz[k, Col] * matriz[Fil, i];           // ARMA ARRAy
-                        if (k > Fil | k<Fil)
-                        {                               
+                        temp[i] = matriz[k, Col] * matriz[Fil, i];           // ARMA ARRAy                      
+                    }
+                    for (int k = 0; k < variables; k++)
+                    {
+                        if (k > Fil | k < Fil)
+                        {
                             matriz[k, Col] = matriz[k, i] - temp[i];       // Realiza la op. con las filas sig.
-                        }                           
+                        }
                     }
                 }       
             }   
