@@ -22,18 +22,18 @@ namespace UI.SistEcuaciones
             {
                 Col = j;
                 Fil = Col;
-                ant = Fil;
+                ant = Fil; //Guarda la fila en la que esta.
                 pos = Fil;
                 while ( flgSalida ==false)
                 {
-                    if (matriz[pos, Col] == 0)
+                    if (matriz[pos, Col] == 0)  //Si es 0 aumenta la fila.
                     {
                         pos++;
                         flgVarCero = true;
                     }
                     else
                     {
-                        if (flgVarCero == true)
+                        if (flgVarCero == true)             //Intercambio de filas.
                         {
                             for (int i = Col; i <= variables; i++)
                             {
@@ -46,7 +46,7 @@ namespace UI.SistEcuaciones
                         flgVarCero = false;
                         flgSalida = true;
                     }
-                }// comprobacion si llega al final y no hay coef dist de cero.
+                }// comprobacion si llega al final y no hay coef dist de cero. NUNCA VA A PASAR NO HACE FALTA
                 // ACA VA LA NORMALIZACION.
                 Coe1 = matriz[Fil, Col];
                 for (int i=0; i<=variables; i++)                        // ARMA E1n
@@ -54,20 +54,20 @@ namespace UI.SistEcuaciones
                     matriz[Fil, i] = matriz[Fil, i] / Coe1; 
                 }
                 double[] temp = new double[variables];              // Array temporal para guardar AxE1n 
-                for (int i=0; i<variables; i++)
+                for (int k=0; k<variables; k++)          //Recorre filas.
                 {
-                    for (int k=0; k<variables; k++)
+                    for (int i=0; i<variables; i++)      //Recorre columnas.
                     {
                         temp[i] = matriz[k, Col] * matriz[Fil, i];           // ARMA ARRAy                      
                     }
-                    for (int k = 0; k < variables; k++)
+                    for (int i = 0; i < variables; i++)  //Recorre columnas.
                     {
                         if (k > Fil | k < Fil)
                         {
-                            matriz[k, Col] = matriz[k, i] - temp[i];       // Realiza la op. con las filas sig.
+                            matriz[k, Col] = matriz[k, i] - temp[i];       // Realiza la op. con las filas ant y sig. usando el array
                         }
                     }
-                }       
+                }   //QUIZA PUEDA HACERSE LO ANTERIOR EN UN SOLO FOR QUE RECORRA LAS COLUMNAS. PROBAR.   
             }   
             for (int i=0; i < variables; i++)
             {
