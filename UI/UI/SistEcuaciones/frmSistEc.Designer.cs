@@ -33,7 +33,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCargarMatriz = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvResultado = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvGrilla
@@ -87,11 +91,44 @@
             this.btnCargarMatriz.UseVisualStyleBackColor = true;
             this.btnCargarMatriz.Click += new System.EventHandler(this.btnCargarMatriz_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(41, 274);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Resultados:";
+            // 
+            // dgvResultado
+            // 
+            this.dgvResultado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultado.ColumnHeadersVisible = false;
+            this.dgvResultado.Location = new System.Drawing.Point(44, 290);
+            this.dgvResultado.Name = "dgvResultado";
+            this.dgvResultado.RowHeadersVisible = false;
+            this.dgvResultado.Size = new System.Drawing.Size(543, 27);
+            this.dgvResultado.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(125, 217);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 35);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Gauss Jordan";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmSistEc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 387);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgvResultado);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCargarMatriz);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.textBox1);
@@ -101,6 +138,7 @@
             this.Text = "frmSistEc";
             this.Load += new System.EventHandler(this.frmSistEc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +151,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCargarMatriz;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvResultado;
+        private System.Windows.Forms.Button button1;
     }
 }
