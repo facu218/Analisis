@@ -8,19 +8,18 @@ namespace UI.SistEcuaciones
 {
     class Metodos
     {
-        public double[] GaussJordan (double[,] matriz, int variables)
+        public string[] GaussJordan (double[,] matriz, int variables)
         {
-            double[] final = new double[variables];
+            string[] final = new string[variables];
             int Fil = 0;
             int Col = 0;
             int ant,pos;
-            double Coe1;
+            double CoeP;
             Boolean flgVarCero = false;
             Boolean flgSalida = false;
             // VERIFICAR QUE EL COEFICIENTE NO SEA CERO, SI ES SE REEMPLAZA POR OTRA FILA.
-            for (int j = 0; j < variables; j++)
+            for (Col =0; Col < variables; Col++)
             {
-                Col = j;
                 Fil = Col;
                 ant = Fil; //Guarda la fila en la que esta.
                 pos = Fil;
@@ -48,31 +47,28 @@ namespace UI.SistEcuaciones
                     }
                 }// comprobacion si llega al final y no hay coef dist de cero. NUNCA VA A PASAR NO HACE FALTA
                 // ACA VA LA NORMALIZACION.
-                Coe1 = matriz[Fil, Col];
-                for (int i=0; i<=variables; i++)                        // ARMA E1n
+                CoeP = matriz[Fil, Col];
+                for (int i=0; i<=variables; i++)                    //Recorre columnas.    
                 {
-                    matriz[Fil, i] = matriz[Fil, i] / Coe1; 
+                    matriz[Fil, i] = matriz[Fil, i] / CoeP;         // ARMA E1n.
                 }
-                double[] temp = new double[variables];              // Array temporal para guardar AxE1n 
+                double[] temp = new double[variables+1];              // Array temporal para guardar AxE1n 
                 for (int k=0; k<variables; k++)          //Recorre filas.
                 {
-                    for (int i=0; i<variables; i++)      //Recorre columnas.
+                    double Valor = matriz[k, Col];
+                    for (int i = 0; i <= variables; i++)  //Recorre columnas.
                     {
-                        temp[i] = matriz[k, Col] * matriz[Fil, i];           // ARMA ARRAy                      
-                    }
-                    for (int i = 0; i < variables; i++)  //Recorre columnas.
-                    {
-                        if (k > Fil | k < Fil)
+                        if (k != Fil) // Saltea la fila con la que esta trabajando.
                         {
-                            matriz[k, Col] = matriz[k, i] - temp[i];       // Realiza la op. con las filas ant y sig. usando el array
+                            temp[i] = Valor * matriz[Fil, i];
+                            matriz[k, i] = matriz[k, i] - temp[i];       // Realiza la op. con las filas ant y sig. usando el array
                         }
                     }
                 }   //QUIZA PUEDA HACERSE LO ANTERIOR EN UN SOLO FOR QUE RECORRA LAS COLUMNAS. PROBAR.   
             }   
             for (int i=0; i < variables; i++)
-            {
-                
-                final[i] = matriz[i, variables-1];
+            {                
+                final[i] = "X"+ i + " = " + Convert.ToString(matriz[i, variables]);
             }
             return final;
         }

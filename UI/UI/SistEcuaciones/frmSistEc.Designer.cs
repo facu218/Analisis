@@ -108,7 +108,7 @@
             this.dgvResultado.Location = new System.Drawing.Point(44, 290);
             this.dgvResultado.Name = "dgvResultado";
             this.dgvResultado.RowHeadersVisible = false;
-            this.dgvResultado.Size = new System.Drawing.Size(543, 27);
+            this.dgvResultado.Size = new System.Drawing.Size(543, 28);
             this.dgvResultado.TabIndex = 7;
             // 
             // button1
@@ -125,6 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(634, 387);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvResultado);

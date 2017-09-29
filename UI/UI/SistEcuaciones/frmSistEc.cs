@@ -42,12 +42,12 @@ namespace UI.SistEcuaciones
                     Matriz[j, i] = Convert.ToDouble(dgvGrilla[i, j].Value);
                 }
             }
-            double[] temp = new double[n];
+            string[] temp = new string[n];
             var a = new Metodos();
             temp = a.GaussJordan(Matriz, n);
             for (int i = 0; i < n; i++)          //ERROR CON EL INDICE. Con el Checkpoint da valores correctos pero sigue sin andar.
             {                                    //#WTF #NoHayFormaDeErrarle #Help
-                dgvResultado[0,i].Value = Convert.ToString(temp[i]);
+                dgvResultado[i,0].Value = temp[i];
             }
         }
 
