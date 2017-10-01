@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.SistEcuaciones;
 
 namespace UI.SistEcuaciones
 {
@@ -42,18 +43,51 @@ namespace UI.SistEcuaciones
                     Matriz[j, i] = Convert.ToDouble(dgvGrilla[i, j].Value);
                 }
             }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e) 
+        {
+            //
+            int n = Convert.ToInt32(textBox1.Text);                             //Deberia poderse cargar la matriz y usarla en 
+            double[,] Matriz = new double[n, n + 1];                            //otros metodos. 
+            for (int i = 0; i <= n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Matriz[j, i] = Convert.ToDouble(dgvGrilla[i, j].Value);
+                }
+            }
+            //
             string[] temp = new string[n];
             var a = new Metodos();
             temp = a.GaussJordan(Matriz, n);
             for (int i = 0; i < n; i++)          //ERROR CON EL INDICE. Con el Checkpoint da valores correctos pero sigue sin andar.
             {                                    //#WTF #NoHayFormaDeErrarle #Help
-                dgvResultado[i,0].Value = temp[i];
+                dgvResultado[i, 0].Value = temp[i];
             }
         }
 
-        private void button1_Click(object sender, EventArgs e) 
+        private void button2_Click(object sender, EventArgs e)
         {
-                                                                 //Aca se pondria el codigo de arriba. Usando el Gauss-Jordan.
+            //
+            int n = Convert.ToInt32(textBox1.Text);                             //Deberia poderse cargar la matriz y usarla en 
+            double[,] Matriz = new double[n, n + 1];                            //otros metodos. 
+            for (int i = 0; i <= n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Matriz[j, i] = Convert.ToDouble(dgvGrilla[i, j].Value);
+                }
+            }
+            //
+            string[] temp = new string[n];
+            var a = new Metodos();
+            temp = a.GaussSeidel(Matriz);
+            for (int i = 0; i < n; i++)          //ERROR CON EL INDICE. Con el Checkpoint da valores correctos pero sigue sin andar.
+            {                                    //#WTF #NoHayFormaDeErrarle #Help
+                dgvResultado[i, 0].Value = temp[i];
+            }
         }
     }
 }
