@@ -13,7 +13,7 @@ namespace UI.SistEcuaciones
         
         public Metodos()
         {
-            TOLE = 0.000000000000001;
+            TOLE = 0.0001;
             ITER = 100;
         }
 
@@ -53,7 +53,7 @@ namespace UI.SistEcuaciones
             bool ResError = true;
             for (int i = 0; i < s.Length-1; i++)
             {
-                if (Math.Abs(s[i]) - Math.Abs(a[i]) > TOLE)
+                if (Math.Abs(Math.Abs(s[i]) - Math.Abs(a[i])) > TOLE)
                 {
                     ResError = false;
                 }
@@ -149,14 +149,17 @@ namespace UI.SistEcuaciones
                 for (int f = 0; f < CanF; f++)
                 {
                     Anteriores[f] = Soluciones[f];
-                    Soluciones[f] = 0;
+                    double temp = 0;
                     //double SolucionIndividual = Ecuaciones[f, CanC - 1];
-                    for (int c = 0; c < CanC - 2; c++)
+
+                    for (int c = 0; c < CanC - 1; c++)//Recorro columnas, excepto ultima y anteultima
                     {
-                        Soluciones[f] += Ecuaciones[f, c] * Soluciones[c];
+                        temp += Ecuaciones[f, c] * Soluciones[c];
                     }
-                    Soluciones[f] += Ecuaciones[f,CanC-1];
-                    Soluciones[f] = Soluciones[f] / Ecuaciones[f, CanC];
+
+                    temp += Ecuaciones[f,CanC-1];
+                    temp= temp / Ecuaciones[f, CanC];
+                    Soluciones[f] = temp;
                 }
                 Contador++;
 
