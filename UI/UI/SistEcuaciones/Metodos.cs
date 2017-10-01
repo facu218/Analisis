@@ -131,7 +131,7 @@ namespace UI.SistEcuaciones
             int CanF = matriz.GetLength(0);//Cantidad de ecuaciones
             int CanC = matriz.GetLength(1);
             int UltimaC = matriz.GetLength(1) - 1;
-            string[] final = new string[CanF];
+            string[] final = new string[CanF+1];
 
             //Hacer el pivoteo parcial
             
@@ -173,8 +173,9 @@ namespace UI.SistEcuaciones
 
             for (int i = 0; i < CanF; i++)
             {
-                final[i] = "X" + i + " = " + Convert.ToString(Soluciones[i]);
+                final[i] = "X" + i+1 + " = " + Convert.ToString(Soluciones[i]);
             }
+            final[CanF] = "Iteraciones: " + Convert.ToString(Contador);
             return final;
 
 
