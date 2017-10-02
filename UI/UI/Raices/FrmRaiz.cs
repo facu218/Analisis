@@ -36,6 +36,7 @@ namespace UI
             var a = new ResultadoRaiz();
             //double xi = Convert.ToDouble(txtValor1.Text);
             //double xd = Convert.ToDouble(txtValor2.Text);
+            string f = txtFunc.Text;
             pnlRaiz.Visible = false;
             int ite = Convert.ToInt16(txtIte.Text);
             double tole = Convert.ToDouble(txtTole.Text);
@@ -43,21 +44,21 @@ namespace UI
             {
                 double xi = Convert.ToDouble(txtValor1.Text);
                 double xd = Convert.ToDouble(txtValor2.Text);
-                txtResultado.Text = a.Biseccion(xi, xd, ite, tole);
+                txtResultado.Text = a.Biseccion(xi, xd, ite, tole,f);
             }else if (flgTan == true)
             {
                 double xi = Convert.ToDouble(txtValor1.Text);
-                txtResultado.Text = a.Tangente(xi, ite, tole);
+                txtResultado.Text = a.Tangente(xi, ite, tole,f);
             }else if(flgReg == true)
             {
                 double xi = Convert.ToDouble(txtValor1.Text);
                 double xd = Convert.ToDouble(txtValor2.Text);
-                txtResultado.Text = a.ReglaFalsa(xi,xd, ite, tole);
+                txtResultado.Text = a.ReglaFalsa(xi,xd, ite, tole,f);
             }else if (flgSec == true)
             {
                 double x0 = Convert.ToDouble(txtValor1.Text);
                 double x1 = Convert.ToDouble(txtValor2.Text);
-                txtResultado.Text = a.Secante(x0, x1, ite, tole);
+                txtResultado.Text = a.Secante(x0, x1, ite, tole,f);
             }
             flgBis = false;
             flgTan = false;

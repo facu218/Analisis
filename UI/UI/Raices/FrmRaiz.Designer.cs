@@ -51,7 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFunc = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.pnlRaiz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
@@ -275,21 +275,21 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Funcion:";
             // 
-            // textBox1
+            // txtFunc
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(232, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "(X-3)^2-1";
+            this.txtFunc.Location = new System.Drawing.Point(71, 27);
+            this.txtFunc.Name = "txtFunc";
+            this.txtFunc.Size = new System.Drawing.Size(232, 20);
+            this.txtFunc.TabIndex = 6;
+            this.txtFunc.Text = "(x-3)^2-1";
             // 
-            // Principal
+            // FrmRaiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(782, 357);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFunc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picBox);
@@ -297,7 +297,7 @@
             this.Controls.Add(this.txtResultado);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Principal";
+            this.Name = "FrmRaiz";
             this.Text = "Metodos";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -327,7 +327,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFunc;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem tangenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reglaFalsaToolStripMenuItem;
