@@ -36,8 +36,6 @@ namespace UI.SistEcuaciones
         private void button1_Click(object sender, EventArgs e)
         {
             int n = Convert.ToInt32(textBox1.Text);
-            dgvResultado.ColumnCount = n;
-            dgvResultado.RowCount = 1;
             double[,] Matriz = new double[n, n + 1];                             
             for (int i = 0; i <= n; i++)
             {

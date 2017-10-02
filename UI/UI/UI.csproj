@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raices\Raiz.cs" />
     <Compile Include="Raices\FrmRaiz.cs">
       <SubType>Form</SubType>
@@ -69,6 +75,9 @@
       <DependentUpon>frmSistEc.cs</DependentUpon>
     </Compile>
     <Compile Include="SistEcuaciones\Metodos.cs" />
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raices\FrmRaiz.resx">
       <DependentUpon>FrmRaiz.cs</DependentUpon>
     </EmbeddedResource>
