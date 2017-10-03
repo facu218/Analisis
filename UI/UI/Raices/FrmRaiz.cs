@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using org.mariuszgromada.math.mxparser;
 
 namespace UI
 {
@@ -83,7 +84,9 @@ namespace UI
             int con = 0;
             int xcentro = picBox.Width / 2; // centro de x
             int ycentro = picBox.Height / 2;// centro de y
-            var a = new Funcion();
+            //var a = new Funcion();
+            string func = txtFunc.Text;
+            Function e = new Function("f(x) = " + func);
             Dibujo.TranslateTransform(xcentro, ycentro);
             Dibujo.ScaleTransform(1, -1);
 
@@ -95,7 +98,7 @@ namespace UI
             con = 0;
             for (double x = xcentro * -1; x < xcentro * 2; x += 0.1) 
             {
-                valores[con] = a.Function(x);
+                valores[con] = e.calculate(x);
                 con = con + 1;
             }
             con = 1;
