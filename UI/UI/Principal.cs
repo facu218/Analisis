@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.SistEcuaciones;
+using UI.Regresion;
 
 namespace UI
 {
@@ -28,6 +29,12 @@ namespace UI
         private void button2_Click(object sender, EventArgs e)
         {
             frmSistEc frm = new frmSistEc();
+            frm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmAjusteCurvas frm= new frmAjusteCurvas();
             frm.Show();
         }
     }
