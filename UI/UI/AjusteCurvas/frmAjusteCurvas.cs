@@ -52,14 +52,14 @@ namespace UI.Regresion
             
                 for (int i = 0; i < n; i++)
                 {
-                    XY = +Convert.ToInt32(dgvPuntos[0, i].Value) * Convert.ToInt32(dgvPuntos[1, i].Value);
+                    XY = XY + Convert.ToInt32(dgvPuntos[0, i].Value) * Convert.ToInt32(dgvPuntos[1, i].Value);
 
-                    sx = +Convert.ToInt32(dgvPuntos[0, i].Value);
-                    sy = +Convert.ToInt32(dgvPuntos[1, i].Value);
-                    sx2 = +(Convert.ToInt32(dgvPuntos[0, i].Value)) * (Convert.ToInt32(dgvPuntos[0, i].Value));
+                    sx = sx + Convert.ToInt32(dgvPuntos[0, i].Value);
+                    sy = sy + Convert.ToInt32(dgvPuntos[1, i].Value);
+                    sx2 = sx2 + (Convert.ToInt32(dgvPuntos[0, i].Value)) * (Convert.ToInt32(dgvPuntos[0, i].Value));
                 }
 
-                double A1 = ((n * XY) - (sx * sy)) / ((n * sx2) - (sx * sx));
+                double A1 = ((n * XY) - (sx * sy)) / ((n * sx2) - (sx*sx));
 
                 double A0 = (sy / n) - A1 * (sx / n);
 
