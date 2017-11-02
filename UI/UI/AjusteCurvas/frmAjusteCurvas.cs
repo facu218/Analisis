@@ -78,5 +78,36 @@ namespace UI.Regresion
             }
             textBox2.Text = funcion;
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            lblInter.Visible = true;
+            txtInter.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int n = Convert.ToInt32(txtInter.Text);
+            double[] xi = new double[n];
+            double[] yi = new double[n];
+            for (int i = 0; i < n; i++)
+            {
+                xi[i] = Convert.ToDouble(dgvPuntos[0, i].Value);
+                yi[i] = Convert.ToDouble(dgvPuntos[1, i].Value);
+            }
+            var a = new MetodosAjuste();
+            string rdo = a.Lagrange(xi, yi, n);
+            label4.Text = "Imagen de la interpolacion";
+            textBox2.Text = rdo;
+            lblCoe.Visible = false;
+            txtCoe.Visible = false;
+            txtPot.Visible = false;
+            lblPot.Visible = false;
+        }
     }
 }

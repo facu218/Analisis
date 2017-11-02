@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblCoe = new System.Windows.Forms.Label();
             this.txtCoe = new System.Windows.Forms.TextBox();
             this.btnPolinomial = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,13 +41,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtInter = new System.Windows.Forms.TextBox();
+            this.lblInter = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtPot = new System.Windows.Forms.TextBox();
+            this.lblPot = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuntos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblPot);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.txtPot);
+            this.groupBox1.Controls.Add(this.lblInter);
+            this.groupBox1.Controls.Add(this.txtInter);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.lblCoe);
             this.groupBox1.Controls.Add(this.txtCoe);
             this.groupBox1.Controls.Add(this.btnPolinomial);
             this.groupBox1.Controls.Add(this.label4);
@@ -67,25 +79,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Regresion lineal";
             // 
-            // label5
+            // lblCoe
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(182, 137);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Coeficiente de correlación:";
+            this.lblCoe.AutoSize = true;
+            this.lblCoe.Location = new System.Drawing.Point(182, 125);
+            this.lblCoe.Name = "lblCoe";
+            this.lblCoe.Size = new System.Drawing.Size(133, 13);
+            this.lblCoe.TabIndex = 15;
+            this.lblCoe.Text = "Coeficiente de correlación:";
+            this.lblCoe.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtCoe
             // 
-            this.txtCoe.Location = new System.Drawing.Point(185, 153);
+            this.txtCoe.Location = new System.Drawing.Point(185, 141);
             this.txtCoe.Name = "txtCoe";
             this.txtCoe.Size = new System.Drawing.Size(207, 20);
             this.txtCoe.TabIndex = 14;
             // 
             // btnPolinomial
             // 
-            this.btnPolinomial.Location = new System.Drawing.Point(140, 272);
+            this.btnPolinomial.Location = new System.Drawing.Point(112, 272);
             this.btnPolinomial.Name = "btnPolinomial";
             this.btnPolinomial.Size = new System.Drawing.Size(75, 42);
             this.btnPolinomial.TabIndex = 13;
@@ -178,6 +191,61 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(185, 206);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(71, 17);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "Lagrange";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // txtInter
+            // 
+            this.txtInter.Location = new System.Drawing.Point(264, 222);
+            this.txtInter.Name = "txtInter";
+            this.txtInter.Size = new System.Drawing.Size(95, 20);
+            this.txtInter.TabIndex = 17;
+            this.txtInter.Visible = false;
+            // 
+            // lblInter
+            // 
+            this.lblInter.AutoSize = true;
+            this.lblInter.Location = new System.Drawing.Point(262, 206);
+            this.lblInter.Name = "lblInter";
+            this.lblInter.Size = new System.Drawing.Size(97, 13);
+            this.lblInter.TabIndex = 18;
+            this.lblInter.Text = "Valor interpolacion:";
+            this.lblInter.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(193, 272);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 42);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Lagrange";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtPot
+            // 
+            this.txtPot.Location = new System.Drawing.Point(185, 180);
+            this.txtPot.Name = "txtPot";
+            this.txtPot.Size = new System.Drawing.Size(207, 20);
+            this.txtPot.TabIndex = 20;
+            // 
+            // lblPot
+            // 
+            this.lblPot.AutoSize = true;
+            this.lblPot.Location = new System.Drawing.Point(182, 164);
+            this.lblPot.Name = "lblPot";
+            this.lblPot.Size = new System.Drawing.Size(113, 13);
+            this.lblPot.TabIndex = 21;
+            this.lblPot.Text = "Potencia de la funcion";
+            // 
             // frmAjusteCurvas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,7 +275,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnPolinomial;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblCoe;
         private System.Windows.Forms.TextBox txtCoe;
+        private System.Windows.Forms.Label lblPot;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtPot;
+        private System.Windows.Forms.Label lblInter;
+        private System.Windows.Forms.TextBox txtInter;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

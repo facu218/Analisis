@@ -51,13 +51,12 @@ namespace UI.AjusteCurvas
                             }
                             matriz[i, j] = valf;   //Arma la matriz con los valores.
                         }
-
                     } 
                 }
                 var a = new Gauss();      
                 rdo = a.GaussJordan(matriz, n);   //Resuelve la matriz con el metodo Gauss-Jordan.
-                double recP = y / puntos;
-                double sr = 0, st = 0;
+                double recP = y / puntos;         //Recta promedio entre los puntos
+                double sr = 0, st = 0;            
                 double sri=0;
                 double xres = 0;
                 for (int k=0; k<puntos; k++)
@@ -66,9 +65,9 @@ namespace UI.AjusteCurvas
                     {
                         xres = xres -rdo[i] * xi[k];
                     }
-                    sri = sri + Math.Pow(yi[k] - n - xres, 2);
-                    st = st + Math.Abs(yi[k] - recP);
-                    sr = sr + Math.Abs(yi[k] - sri);
+                    sri = sri + Math.Pow(yi[k] - n - xres, 2);  //Valor de la funcion en ese punto (xi).
+                    st = st + Math.Abs(yi[k] - recP);       //Dif de los puntos con la recta promedio.
+                    sr = sr + Math.Abs(yi[k] - sri);        //Dif de los puntos con la funcion calculada.
                 }
                 CoeCo= Math.Sqrt((st - sr) / st) * 100;   //Coeficiente de correlacion.
             }
@@ -78,6 +77,27 @@ namespace UI.AjusteCurvas
                 final[i] = Convert.ToString(rdo[i]);
             }
             return final;
+        }
+
+        public string Lagrange (double[]xi, double[] yi, int valorinterp)
+        {
+            int n = xi.Length;
+            double soluc = 0;
+            for (int j=0; j<=n; j++)
+            {
+                double num = 1;
+                double den = 1;
+                for (int i=0; i<=n; i++)
+                {
+                    if (i != j)
+                    {
+                        num = num * (valorinterp - xi[i]);
+                        den = den * (xi[j] - xi[i]);
+                    }
+                }
+                soluc += yi[j] * (num / den);
+            }
+            return "La imagen a interpolar en el valor X= " + valorinterp + " es Y= " + Convert.ToString(soluc);
         }
     }
 }
