@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.AjusteCurvas;
 
 namespace UI.Regresion
 {
@@ -17,31 +18,12 @@ namespace UI.Regresion
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             int n = Convert.ToInt32(textBox1.Text);
             dgvPuntos.ColumnCount = 2;
-            dgvPuntos.RowCount = n;
-            
-
-
+            dgvPuntos.RowCount = n;            
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmAjusteCurvas_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             int n = Convert.ToInt32(textBox1.Text);
@@ -76,9 +58,25 @@ namespace UI.Regresion
             txtCoe.Text = "%" + r;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnPolinomial_Click(object sender, EventArgs e)
         {
-
+            int n = Convert.ToInt32(textBox1.Text);
+            double[] xi = new double[n];
+            double[] yi = new double[n];
+            for (int i=0; i < n; i++)
+            {
+                xi[i] = Convert.ToDouble(dgvPuntos[0, i].Value);
+                yi[i] = Convert.ToDouble(dgvPuntos[1, i].Value);
+            }           
+            var a = new MetodosAjuste();
+            string[] j = a.RegresionPolinomial(n, xi, yi);
+            string funcion= null;
+            int k = j.Length;
+            for (int i=0; i<k; i++)
+            {
+                funcion = funcion + " a" + i + " " + j[i];
+            }
+            textBox2.Text = funcion;
         }
     }
 }

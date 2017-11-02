@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCoe = new System.Windows.Forms.TextBox();
+            this.btnPolinomial = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -38,9 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtCoe = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuntos)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             // 
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtCoe);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnPolinomial);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.button2);
@@ -59,12 +59,39 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(41, 30);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 367);
+            this.groupBox1.Size = new System.Drawing.Size(450, 324);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Regresion lineal";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(182, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(133, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Coeficiente de correlación:";
+            // 
+            // txtCoe
+            // 
+            this.txtCoe.Location = new System.Drawing.Point(185, 153);
+            this.txtCoe.Name = "txtCoe";
+            this.txtCoe.Size = new System.Drawing.Size(207, 20);
+            this.txtCoe.TabIndex = 14;
+            // 
+            // btnPolinomial
+            // 
+            this.btnPolinomial.Location = new System.Drawing.Point(140, 272);
+            this.btnPolinomial.Name = "btnPolinomial";
+            this.btnPolinomial.Size = new System.Drawing.Size(75, 42);
+            this.btnPolinomial.TabIndex = 13;
+            this.btnPolinomial.Text = "Regresion Polinomial";
+            this.btnPolinomial.UseVisualStyleBackColor = true;
+            this.btnPolinomial.Click += new System.EventHandler(this.btnPolinomial_Click);
             // 
             // label4
             // 
@@ -84,7 +111,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(52, 306);
+            this.button2.Location = new System.Drawing.Point(31, 272);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 42);
             this.button2.TabIndex = 10;
@@ -100,7 +127,6 @@
             this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Y";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -141,7 +167,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(95, 20);
             this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -153,42 +178,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(153, 306);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 42);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Regresion Polinomial";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // txtCoe
-            // 
-            this.txtCoe.Location = new System.Drawing.Point(185, 153);
-            this.txtCoe.Name = "txtCoe";
-            this.txtCoe.Size = new System.Drawing.Size(207, 20);
-            this.txtCoe.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(182, 137);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Coeficiente de correlación:";
-            // 
             // frmAjusteCurvas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(551, 409);
+            this.ClientSize = new System.Drawing.Size(475, 347);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAjusteCurvas";
             this.Text = "frnAjusteCurvas";
-            this.Load += new System.EventHandler(this.frmAjusteCurvas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuntos)).EndInit();
@@ -208,7 +206,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnPolinomial;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCoe;
     }

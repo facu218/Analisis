@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjusteCurvas\Gauss.cs" />
+    <Compile Include="AjusteCurvas\MetodosAjuste.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
