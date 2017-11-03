@@ -142,24 +142,31 @@ namespace UI.AjusteCurvas
                 }
             }
             var a = new Gauss();
-            double[] sol = a.GaussJordan(matriz, xl);
+            double[] sol = a.GaussJordan(matriz, xl+1);//Cambio xl por xl+1
             for (int i = 0; i < n; i++)
             {
-                st += Math.Pow(promy / yi[i], 2);
+                st += Math.Pow(promy - yi[i], 2); //st += Math.Pow(promy / yi[i], 2)
                 double s = 0;
                 for (int j = 0; j < xl+1; j++)
                 {
-                        s += (Math.Pow(sol[j], i) * Math.Pow(xi[i], j));
+                        s += (sol[j] * Math.Pow(xi[i], j)); //s += (Math.Pow(sol[j], i) * Math.Pow(xi[i], j))
                 }
                 sr += Math.Pow((s - yi[i]), 2);
             }           
-            sr += yi[0];
+            //sr += yi[0];
             double r = Math.Sqrt((st - sr) / st) * 100;
             Coeficiente = r;
             string SolF = null;
-            for (int i = 0; i < xl; i++)
+            for (int i = xl+1; i > 0; i--) //for (int i = 0; i < xl+1; i++)
             {
-                SolF = SolF + Convert.ToString(sol[i]) + "X" + i + " ";
+                if (i == 1)
+                {
+                    SolF = SolF + Convert.ToString(Math.Round(sol[i-1], 4)) + (i-1) + " ";
+                }
+                else
+                {
+                    SolF = SolF + Convert.ToString(Math.Round(sol[i-1], 4)) + "X" + (i-1) + " + ";
+                }
             }
             return SolF;
         }

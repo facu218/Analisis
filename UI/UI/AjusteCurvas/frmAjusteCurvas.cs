@@ -49,8 +49,9 @@ namespace UI.Regresion
                 double xi = Convert.ToDouble(dgvPuntos[0, i].Value);
                 double yi = Convert.ToDouble(dgvPuntos[1, i].Value);
                 double sri = ((A1 * xi) + A0);
-                sr = sr + Math.Abs(Math.Pow(yi-sri,2));
-                st = st + Math.Abs(Convert.ToDouble(dgvPuntos[1, i].Value) - recP);
+                //sr = sr + Math.Abs(Math.Pow(yi-sri,2));
+                sr = sr + Math.Pow(yi - sri, 2);
+                st = st + Math.Pow(Convert.ToDouble(dgvPuntos[1, i].Value) - recP,2);
             }
             double r = Math.Sqrt((st - sr) / st)*100;
 
@@ -72,7 +73,7 @@ namespace UI.Regresion
             var a = new MetodosAjuste();
             string j = a.Polinomial( xi, yi, xl);
             textBox2.Text = j;
-            txtCoe.Text = Convert.ToString(a.Coeficiente);
+            txtCoe.Text = Convert.ToString(Math.Round(a.Coeficiente,2))+ "%";
         }
 
         private void button3_Click(object sender, EventArgs e)
