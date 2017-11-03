@@ -138,7 +138,7 @@ namespace UI.AjusteCurvas
                     {
                         matriz[j, k] += Math.Pow(xi[i], j + k);
                     }
-                    matriz[j, -1] += yi[i] * Math.Pow(xi[i], j);
+                    matriz[j, xl+1] += yi[i] * Math.Pow(xi[i], j);
                 }
             }
             var a = new Gauss();
@@ -146,19 +146,18 @@ namespace UI.AjusteCurvas
             for (int i = 0; i < n; i++)
             {
                 st += Math.Pow(promy / yi[i], 2);
-            }
-            for (int i = 0; i < n; i++)
-            {
-                if (i != 0)
+                double s = 0;
+                for (int j = 0; j < xl+1; j++)
                 {
-                    sr += (Math.Pow(xi[i], i) - Math.Pow(yi[i], 2));
+                        s += (Math.Pow(sol[j], i) * Math.Pow(xi[i], j));
                 }
-            }
+                sr += Math.Pow((s - yi[i]), 2);
+            }           
             sr += yi[0];
             double r = Math.Sqrt((st - sr) / st) * 100;
             Coeficiente = r;
             string SolF = null;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < xl; i++)
             {
                 SolF = SolF + Convert.ToString(sol[i]) + "X" + i + " ";
             }
