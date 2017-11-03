@@ -9,7 +9,26 @@ namespace UI.AjusteCurvas
 {
     public class MetodosAjuste
     {
-        public string[] RegresionPolinomial(int puntos, double[] xi, double[]yi)
+        public MetodosAjuste()
+        {
+            Coeficiente = 0;
+
+        }
+        public double Coeficiente;
+
+        public string Resultado(double[]m, double r)
+        {
+            int n = m.Length;
+            string Sol = null;
+            for (int i=0; i<n; i++)
+            {
+                Sol = Sol + m[i] + "X" + i + " ";
+            }
+            return Sol;
+        }
+
+
+        public string[] RegresionPolinomial(int puntos, double[] xi, double[]yi)   //NO ANDA
         {
             string[] final;
             double[] rdo = null;
@@ -77,7 +96,7 @@ namespace UI.AjusteCurvas
                 final[i] = Convert.ToString(rdo[i]);
             }
             return final;
-        }
+        } 
 
         public string Lagrange (double[]xi, double[] yi, int valorinterp)
         {
@@ -98,6 +117,52 @@ namespace UI.AjusteCurvas
                 soluc += yi[j] * (num / den);
             }
             return "La imagen a interpolar en el valor X= " + valorinterp + " es Y= " + Convert.ToString(soluc);
+        }
+
+        public string Polinomial(double[] xi, double[] yi, int xl)
+        {
+            int n = xi.Length;
+            double[,] matriz = new double[xl + 1, xl + 2];
+            double sx = 0, sy = 0, st = 0, sr = 0;
+            for (int i = 0; i < n; i++)
+            {
+                sx += xi[i];
+                sy += yi[i];
+            }
+            double promy = sy / n;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < xl + 1; j++)
+                {
+                    for (int k = 0; k < xl + 1; k++)
+                    {
+                        matriz[j, k] += Math.Pow(xi[i], j + k);
+                    }
+                    matriz[j, -1] += yi[i] * Math.Pow(xi[i], j);
+                }
+            }
+            var a = new Gauss();
+            double[] sol = a.GaussJordan(matriz, xl);
+            for (int i = 0; i < n; i++)
+            {
+                st += Math.Pow(promy / yi[i], 2);
+            }
+            for (int i = 0; i < n; i++)
+            {
+                if (i != 0)
+                {
+                    sr += (Math.Pow(xi[i], i) - Math.Pow(yi[i], 2));
+                }
+            }
+            sr += yi[0];
+            double r = Math.Sqrt((st - sr) / st) * 100;
+            Coeficiente = r;
+            string SolF = null;
+            for (int i = 0; i < n; i++)
+            {
+                SolF = SolF + Convert.ToString(sol[i]) + "X" + i + " ";
+            }
+            return SolF;
         }
     }
 }

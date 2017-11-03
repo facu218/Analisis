@@ -61,6 +61,7 @@ namespace UI.Regresion
         private void btnPolinomial_Click(object sender, EventArgs e)
         {
             int n = Convert.ToInt32(textBox1.Text);
+            int xl = Convert.ToInt32(txtPot.Text);
             double[] xi = new double[n];
             double[] yi = new double[n];
             for (int i=0; i < n; i++)
@@ -69,25 +70,9 @@ namespace UI.Regresion
                 yi[i] = Convert.ToDouble(dgvPuntos[1, i].Value);
             }           
             var a = new MetodosAjuste();
-            string[] j = a.RegresionPolinomial(n, xi, yi);
-            string funcion= null;
-            int k = j.Length;
-            for (int i=0; i<k; i++)
-            {
-                funcion = funcion + " a" + i + " " + j[i];
-            }
-            textBox2.Text = funcion;
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            lblInter.Visible = true;
-            txtInter.Visible = true;
+            string j = a.Polinomial( xi, yi, xl);
+            textBox2.Text = j;
+            txtCoe.Text = Convert.ToString(a.Coeficiente);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -108,6 +93,30 @@ namespace UI.Regresion
             txtCoe.Visible = false;
             txtPot.Visible = false;
             lblPot.Visible = false;
+        }
+
+        private void rdbLineal_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPot.Enabled = false;
+            txtInter.Enabled = false;
+
+        }
+
+        private void rdbPolinomial_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPot.Enabled = true;
+            txtInter.Enabled = false;
+        }
+
+        private void rdbLagrange_CheckedChanged(object sender, EventArgs e)
+        {
+            txtInter.Enabled = true;
+            txtPot.Enabled = false;
+        }
+
+        private void txtInter_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

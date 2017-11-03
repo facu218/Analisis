@@ -109,6 +109,7 @@
             // 
             // txtResultado
             // 
+            this.txtResultado.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtResultado.Location = new System.Drawing.Point(0, 242);
             this.txtResultado.Name = "txtResultado";
             this.txtResultado.ReadOnly = true;
@@ -117,7 +118,7 @@
             // 
             // pnlRaiz
             // 
-            this.pnlRaiz.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlRaiz.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pnlRaiz.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlRaiz.Controls.Add(this.label5);
             this.pnlRaiz.Controls.Add(this.txtTole);
@@ -207,16 +208,16 @@
             // lblPrincipal
             // 
             this.lblPrincipal.AutoSize = true;
-            this.lblPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrincipal.Location = new System.Drawing.Point(3, 0);
             this.lblPrincipal.Name = "lblPrincipal";
-            this.lblPrincipal.Size = new System.Drawing.Size(213, 17);
+            this.lblPrincipal.Size = new System.Drawing.Size(245, 17);
             this.lblPrincipal.TabIndex = 0;
             this.lblPrincipal.Text = "Ingrese 2 valores para biseccion";
             // 
             // picBox
             // 
-            this.picBox.BackColor = System.Drawing.SystemColors.Control;
+            this.picBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.picBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picBox.Location = new System.Drawing.Point(357, 27);
             this.picBox.Name = "picBox";
@@ -268,10 +269,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.Size = new System.Drawing.Size(70, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Funcion:";
             // 
@@ -287,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(782, 357);
             this.Controls.Add(this.txtFunc);
             this.Controls.Add(this.label2);
