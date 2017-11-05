@@ -102,11 +102,11 @@ namespace UI.AjusteCurvas
         {
             int n = xi.Length;
             double soluc = 0;
-            for (int j=0; j<=n; j++)
+            for (int j=0; j<n; j++)
             {
                 double num = 1;
                 double den = 1;
-                for (int i=0; i<=n; i++)
+                for (int i=0; i<n; i++)
                 {
                     if (i != j)
                     {
@@ -116,7 +116,7 @@ namespace UI.AjusteCurvas
                 }
                 soluc += yi[j] * (num / den);
             }
-            return "La imagen a interpolar en el valor X= " + valorinterp + " es Y= " + Convert.ToString(soluc);
+            return "La imagen a interpolar en el valor X= " + valorinterp + " es Y= " + Convert.ToString(Math.Round(soluc,6));
         }
 
         public string Polinomial(double[] xi, double[] yi, int xl)

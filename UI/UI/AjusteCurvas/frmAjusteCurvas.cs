@@ -55,8 +55,8 @@ namespace UI.Regresion
             }
             double r = Math.Sqrt((st - sr) / st)*100;
 
-            textBox2.Text = "Y = " + A1 + "X + (" + A0+ ")";
-            txtCoe.Text = "%" + r;
+            textBox2.Text = "Y = " + Math.Round(A1,4) + "x + (" + Math.Round(A0, 4) + ")";
+            txtCoe.Text = r + "%";
         }
 
         private void btnPolinomial_Click(object sender, EventArgs e)
@@ -78,7 +78,8 @@ namespace UI.Regresion
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int n = Convert.ToInt32(txtInter.Text);
+            int ninter = Convert.ToInt32(txtInter.Text);
+            int n = Convert.ToInt32(textBox1.Text);
             double[] xi = new double[n];
             double[] yi = new double[n];
             for (int i = 0; i < n; i++)
@@ -87,7 +88,7 @@ namespace UI.Regresion
                 yi[i] = Convert.ToDouble(dgvPuntos[1, i].Value);
             }
             var a = new MetodosAjuste();
-            string rdo = a.Lagrange(xi, yi, n);
+            string rdo = a.Lagrange(xi, yi, ninter);
             label4.Text = "Imagen de la interpolacion";
             textBox2.Text = rdo;
             lblCoe.Visible = false;
