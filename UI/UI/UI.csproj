@@ -54,6 +54,13 @@
   <ItemGroup>
     <Compile Include="AjusteCurvas\Gauss.cs" />
     <Compile Include="AjusteCurvas\MetodosAjuste.cs" />
+    <Compile Include="AreaFuncion\frmAreaFuncion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AreaFuncion\frmAreaFuncion.Designer.cs">
+      <DependentUpon>frmAreaFuncion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AreaFuncion\MetodosArea.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +92,9 @@
     <Compile Include="SistEcuaciones\Metodos.cs" />
     <EmbeddedResource Include="AjusteCurvas\frmAjusteCurvas.resx">
       <DependentUpon>frmAjusteCurvas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AreaFuncion\frmAreaFuncion.resx">
+      <DependentUpon>frmAreaFuncion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

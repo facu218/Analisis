@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.SistEcuaciones;
 using UI.Regresion;
+using UI.AreaFuncion;
 
 namespace UI
 {
@@ -35,6 +36,12 @@ namespace UI
         private void button3_Click(object sender, EventArgs e)
         {
             frmAjusteCurvas frm= new frmAjusteCurvas();
+            frm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmAreaFuncion frm = new frmAreaFuncion();
             frm.Show();
         }
     }
