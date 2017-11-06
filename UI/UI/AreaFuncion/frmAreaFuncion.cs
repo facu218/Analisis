@@ -22,33 +22,35 @@ namespace UI.AreaFuncion
             string f = txtFunc.Text;
             double a = Convert.ToDouble(txtValA.Text);
             double b = Convert.ToDouble(txtValB.Text);
-            int inter = Convert.ToInt32(txtInter.Text);
-            RadioButton radioBtn = (RadioButton)sender;
-            var n = new MetodosArea();
-            if (radioBtn.Checked == true)
+            int? inter = null;
+            
+            if (!string.IsNullOrEmpty(txtInter.Text))
             {
-                switch (radioBtn.Name)
-                {
-                    case "rbTrapecio":
-                        txtResultado.Text = Convert.ToString(n.Trapecio(f, a, b));
-                        break;
+                inter = Convert.ToInt32(txtInter.Text);
+            }
+            
+            var n = new MetodosArea();
+            if (rbTrap.Checked)
+            {
+                txtResultado.Text = "El area por Trapecio es: " + Convert.ToString(n.Trapecio(f, a, b));
+            }
+            else if (rbTrapM.Checked)
+            {
+                txtResultado.Text = "El area por Trapecio multiple es: " + Convert.ToString(n.TrapecioMultiple(f, a, b, inter.Value));
+            }
+            else if (rbSimpson13.Checked)
+            {
+                txtResultado.Text = "El area por Simpson 1/3 es: " + Convert.ToString(n.Simpson13(f, a, b));
 
-                    case "rbTrapecioM":
-                        txtResultado.Text = Convert.ToString(n.TrapecioMultiple(f, a, b, inter));
-                        break;
+            }
+            else if (rbSimpson13M.Checked)
+            {
+                txtResultado.Text = "El area por Simpson 1/3 multiple es: " + Convert.ToString(n.Simpson13_Multiple(f, a, b, inter.Value));
 
-                    case "rbSimpson13":
-                        txtResultado.Text = Convert.ToString(n.Simpson13(f, a, b));
-                        break;
-
-                    case "rbSimpson13M":
-                        txtResultado.Text = Convert.ToString(n.Simpson13_Multiple(f, a, b, inter));
-                        break;
-
-                    case "rbSimpson38":
-                        txtResultado.Text = Convert.ToString(n.Simpson38(f, a, b));
-                        break;
-                }
+            }
+            else
+            {
+                txtResultado.Text = "El area por Simpson 3/8 es: " + Convert.ToString(n.Simpson38(f, a, b));
 
             }
         }
