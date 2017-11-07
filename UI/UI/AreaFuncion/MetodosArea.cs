@@ -12,7 +12,7 @@ namespace UI.AreaFuncion
         public double Trapecio (string f, double a, double b)
         {
             Function fun = new Function("f(x) = " + f);
-            double sol = Math.Abs(((fun.calculate(b) + fun.calculate(b)) * (b - a)) / 2); //formula
+            double sol = Math.Abs(((fun.calculate(b) + fun.calculate(a)) * (b - a)) / 2); //formula
             return sol;
         }
 
@@ -23,9 +23,9 @@ namespace UI.AreaFuncion
             double suma = 0;
             for (int i=1; i<inter; i++)
             {
-                suma += fun.calculate(a + i * h); //suma los valores intermedios
+                suma += fun.calculate(a + i*h); //suma los valores intermedios
             }
-            double sol = Math.Abs((h/2)*fun.calculate(a) + 2 * suma + fun.calculate(b)); //formula del metodo
+            double sol = Math.Abs((h/2)*(fun.calculate(a) + 2 * suma + fun.calculate(b))); //formula del metodo
             return sol;
         }
 
