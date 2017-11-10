@@ -48,7 +48,7 @@ namespace UI.AreaFuncion
             {   //Si es impar calcula los 3 ultimos intervalos con Simpson 3/8.
                 double bl = b;   
                 b = b - 3 * h;
-                resF = resF + Simpson38(f, a, b);
+                resF = resF + Simpson38(f, b, bl);
                 inter = inter - 3;  //resta 3 a la cantidad de intervalos
             }
             for (int i=1; i<inter; i++)
